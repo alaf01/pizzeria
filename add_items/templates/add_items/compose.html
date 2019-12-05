@@ -1,0 +1,86 @@
+{% extends "add_items/layout.html" %}
+
+{% block title %}
+    Compose your pizza
+{% endblock %}
+
+{% block body %}
+
+<div class="pad40">
+<div class="price">
+
+
+              <ul>
+      {% if dough %}
+      <h1>Dough</h1>
+            <form>
+                {% for item in dough %}
+                        <li class="hover">
+                          <a>  {{ item }} </a>
+                        </li>
+                {% endfor %}
+
+                    </ul>
+        {% else %}
+        <h3>No dough to choose</h3>
+        {% endif %}
+        {% if size %}
+              <h1>Size</h1>
+
+                    <ul>
+                {% for item in size %}
+                        <li class="hover">
+                            <a>{{ item }} </a>
+                        </li>
+                {% endfor %}
+
+              </ul>
+      {% else %}
+        <h3>No size to choose</h3>
+      {% endif %}
+
+      {% if thickness %}
+            <h1>Dough thickness</h1>
+
+                    <ul>
+                {% for item in thickness %}
+                        <li class="hover">
+                            <a>{{ item }} </a>
+                        </li>
+                {% endfor %}
+
+            </ul>
+    {% else %}
+      <h3>No thickness to choose</h3>
+    {% endif %}
+
+
+  {% if sauce %}
+        <h1>sauce</h1>
+        <ul>
+    {% for item in sauce %}
+            <li class="hover">
+                <a>{{ item }} </a>
+            </li>
+    {% endfor %}
+        </ul>
+{% else %}
+  <h3>No sauce to choose</h3>
+{% endif %}
+
+{% if ingredient %}
+      <h1>ingredients</h1>
+      <ul>
+  {% for item in ingredient %}
+          <li class="hover">
+              <a>{{ item }} </a>
+          </li>
+  {% endfor %}
+      </ul>
+{% else %}
+<h3>No ingredient to choose</h3>
+{% endif %}
+</form>
+</div>
+</div>
+{% endblock %}

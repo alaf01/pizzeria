@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'add_items/style.css' %}"/>
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+      <div class="pizza-img">
+
+          <div class="container">
+            <div class="logo-text"></div>
+              <div class="topnav">
+                <a href="/compose/">Order</a>
+                <a href="/price/">Price-list</a>
+                 <a href="/menu/">Menu</a>
+                 <a href="/">Home</a>
+              </div>
+          </div>
+        </div>
+        {% block body %}{% endblock %}
+  </body>
+</html>

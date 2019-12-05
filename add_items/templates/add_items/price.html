@@ -1,0 +1,31 @@
+{% extends "add_items/layout.html" %}
+
+{% block title %}
+    Ingredients
+{% endblock %}
+
+{% block body %}
+<div class="pad40">
+  <div class="intro">
+  <h1>Compose your perfect pizza</h1>
+  <p>Don't worry about the price- no matter what you choose you pay the same for the one pizza size.</p>
+  <p> Enjoy the freedom of choosing!</p>
+  </div>
+
+<table class="price">
+    <tr>
+    <th>Size</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+    <tr></tr>
+  </tr>
+{% for size in sizes %}
+  <tr class="hover">
+    <td>{{size.size}}</td>
+    <td>{{size.price}}</td>
+  </tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}

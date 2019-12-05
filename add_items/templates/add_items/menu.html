@@ -1,0 +1,48 @@
+{% extends "add_items/layout.html" %}
+
+{% block title %}
+    Menu
+{% endblock %}
+
+{% block body %}
+
+<div class="menutable">
+
+
+      {% if pizza %}
+
+      <table class="table">
+        <tr>
+                  <th>  Pizza </th>
+                  <th>  Price </th>
+        </tr>
+        <hl>
+          <form method="post">
+            {% csrf_token %}
+          {% for item in pizza %}
+          <tr class="hover">
+                    <td>  {{ item.name }}
+
+                    <br>
+                    <div class="ingr">
+                    Ingredients:
+                    {% for ing in item.ingredient.all %}
+                    <span >{{ing}}</span>
+                    {% if not forloop.last %},{% endif %}
+                    {% endfor %}
+                    <br>
+                    Sauce: {{item.sauce}}
+                    </div>
+                    </td>
+                    <td>  {{ item.price }} </td>
+                    <td><button class="tocart" name="cart" type="submit" value="{{item}}">add to cart</button></td>
+          </tr>
+          {% endfor %}
+          </form>
+      <table>
+        {% else %}
+        <h3>No pizza to choose</h3>
+        {% endif %}
+
+</div>
+{% endblock %}

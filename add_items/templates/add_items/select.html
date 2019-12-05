@@ -1,0 +1,36 @@
+{% extends "add_items/layout.html" %}
+
+{% block title %}
+    Ingredients
+{% endblock %}
+
+{% block body %}
+
+
+<h1> Welcome in Mamma Mia- best pizzeria in town. We are happy to serve you the best ingredients, fresh, tasty and aromatic.</h1>
+<h3> Log in to our website to compose your perfect pizza or order the one that already exists. <h3>
+              <h1>Ingredients</h1>
+              <ul>
+      {% if inredients %}
+          {% for ingredient in ingredients %}
+                  <li>
+                      {{ ingredient }}
+                  </li>
+          {% endfor %}
+              </ul>
+        {% else %}
+        <h3>No ingredients to choose</h3>
+        {% endif %}
+        {% if dough %}
+              <h1>Dough</h1>
+              <ul>
+          {% for d in dough %}
+                  <li>
+                    {{ d }}
+                  </li>
+          {% endfor %}
+              </ul>
+      {% else %}
+        <h3>No dough to choose</h3>
+      {% endif %}
+{% endblock %}
